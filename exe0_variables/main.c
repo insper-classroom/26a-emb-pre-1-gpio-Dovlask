@@ -7,7 +7,7 @@ void foo(void) {
     a = a + 1; // acessa variavel global
 }
 
-void main(void) {
+int main(void) {
     while (1) {
         foo();
         
@@ -15,4 +15,5 @@ void main(void) {
             b = 1;
         }
     }
+    return 0;
 }
