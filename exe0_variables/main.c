@@ -13,6 +13,7 @@ int main(void) {
 
         if (a > 5) {
             b = 1;
+            printf("%d\n", b);
         }
     }
 }
