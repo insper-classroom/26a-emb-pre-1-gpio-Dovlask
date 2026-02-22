@@ -21,7 +21,6 @@ int main() {
     gpio_init(BTN_PIN_R);
     gpio_set_dir(BTN_PIN_R, GPIO_IN);
     gpio_pull_up(BTN_PIN_R); 
-
     while (true) {
         if (!gpio_get(BTN_PIN_R)) {
             

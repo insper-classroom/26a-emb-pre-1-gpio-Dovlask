@@ -7,17 +7,14 @@ const int BTN_PIN_2 = 7;
 
 int main() {
     stdio_init_all();
-
     gpio_init(BTN_PIN);
     gpio_set_dir(BTN_PIN, GPIO_IN);
     gpio_pull_up(BTN_PIN);
-
     gpio_init(BTN_PIN_2);
     gpio_set_dir(BTN_PIN_2, GPIO_IN);
     gpio_pull_up(BTN_PIN_2);
     int cnt_1 = 0;
     int cnt_2 = 0;
-
     while (true) {
 
         if (!gpio_get(BTN_PIN)) {

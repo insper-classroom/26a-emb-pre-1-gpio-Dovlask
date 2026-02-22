@@ -12,52 +12,38 @@ int main() {
 
     gpio_init(LED_PIN_R);
     gpio_set_dir(LED_PIN_R, GPIO_OUT);
-    
     gpio_init(LED_PIN_G);
     gpio_set_dir(LED_PIN_G, GPIO_OUT);
-
     gpio_init(BTN_PIN_R);
     gpio_set_dir(BTN_PIN_R, GPIO_IN);
     gpio_pull_up(BTN_PIN_R);
-
     gpio_init(BTN_PIN_G);
     gpio_set_dir(BTN_PIN_G, GPIO_IN);
     gpio_pull_up(BTN_PIN_G);
-
     int contador_r = 0;
     int contador_g = 0;
-
     while (true) {
-        
-        if (!gpio_get(BTN_PIN_R)) {
-            
+        if (!gpio_get(BTN_PIN_R)) {          
             if (contador_r == 0) {
                 gpio_put(LED_PIN_R, 1); 
-                contador_r = 1;         
-                
+                contador_r = 1;                      
                 while (!gpio_get(BTN_PIN_R)) {}
             } 
             else if (contador_r == 1) {
                 gpio_put(LED_PIN_R, 0); 
-                contador_r = 0;      
-                
+                contador_r = 0;     
                 while (!gpio_get(BTN_PIN_R)) {}
             }
         }
-
-        if (!gpio_get(BTN_PIN_G)) {
-            
+        if (!gpio_get(BTN_PIN_G)) {          
             if (contador_g == 0) {
                 gpio_put(LED_PIN_G, 1); 
-                contador_g = 1;        
-                
+                contador_g = 1;                       
                 while (!gpio_get(BTN_PIN_G)) {}
             } 
             else if (contador_g == 1) {
                 gpio_put(LED_PIN_G, 0); 
-                contador_g = 0;         
-                
-                
+                contador_g = 0;          
                 while (!gpio_get(BTN_PIN_G)) {}
             }
         }
